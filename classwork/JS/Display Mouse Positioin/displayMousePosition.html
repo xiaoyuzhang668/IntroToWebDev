@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CODE-ALONG: Display Mouse Position</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body>
+	<div class="container">
+		<h1>CODE-ALONG: Display Mouse Position</h1>
+		<fieldset>
+			<legend>Mouse Position</legend>
+			<div>
+				<label>X:</label> <span id="mouseX">Untracked</span>
+			</div>
+			<div>
+				<label>Y:</label> <span id="mouseY">Untracked</span>
+			</div>
+		</fieldset>
+		<div>
+			<button id="btnToggle" class="btn btn-success">Start mouse tracking.</button>
+			<button id="btnStatus" class="btn btn-secondary">Tracking Disabled</button>
+		</div>
+
+		<div id="mouseOverArea" class="bg-secondary text-white mt-5 h3 d-flex justify-content-center align-items-center" style="min-height: 230px; ">
+			mouse over area to display X and Y
+		</div>
+	</div>
+	<script src="displayMousePosition.js"></script>
+</body>
+
+</html>
