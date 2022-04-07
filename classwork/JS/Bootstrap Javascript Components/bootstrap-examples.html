@@ -22,6 +22,14 @@
 			color: #fef9ff;
 		}
 
+		.bg-accordion {
+			background-color: #5b7d87;
+		}
+
+		.btn-link {
+			color: #fef9ff !important;
+		}
+
 		nav .btn:hover {
 			font-weight: bold;
 		}
@@ -57,9 +65,9 @@
 			</div>
 		</div> <!-- End of .row div -->
 
-		<div class="acordion" id="accordionExample">
+		<div class="accordion" id="accordionExample">
 			<div class="card">
-				<div class="card-header" id="portfolio01">
+				<div class="card-header bg-accordion" id="portfolio01">
 					<h5 class="mb-0">
 						<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-control="collapseOne">
 							My First Portfolio Piece
@@ -67,7 +75,7 @@
 					</h5>
 				</div><!-- end of #portfolio01 div -->
 
-				<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-paret="#accordingExample">
+				<div id="collapseOne" class="collapse show" aria-labelledby="portfolio01" data-parent="#accordionExample">
 					<div class="card-body">
 						<p>
 							<a href="" target="_blank">Name of Website</a>
@@ -80,10 +88,46 @@
 				</div><!-- end of #collapsOne div -->
 			</div> <!-- end of .card div -->
 			<div class="card">
+				<div class="card-header bg-accordion" id="portfolio02">
+					<h5 class="mb-0">
+						<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-control="collapseTwo">
+							My Second Portfolio Piece
+						</button>
+					</h5>
+				</div><!-- end of #portfolio01 div -->
 
+				<div id="collapseTwo" class="collapse" aria-labelledby="portfolio02" data-parent="#accordionExample">
+					<div class="card-body">
+						<p>
+							<a href="" target="_blank">Name of Website</a>
+						</p>
+						<figure>
+							<img src="images/website-1778529_640.png" alt="Screenshot of home page">
+						</figure>
+					</div><!-- end of .card-body div -->
+
+				</div><!-- end of #collapsOne div -->
 			</div> <!-- end of .card div -->
 			<div class="card">
+				<div class="card-header bg-accordion" id="portfolio03">
+					<h5 class="mb-0">
+						<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-control="collapseThree">
+							My Third Portfolio Piece
+						</button>
+					</h5>
+				</div><!-- end of #portfolio01 div -->
 
+				<div id="collapseThree" class="collapse" aria-labelledby="portfolio03" data-parent="#accordionExample">
+					<div class="card-body">
+						<p>
+							<a href="" target="_blank">Name of Website</a>
+						</p>
+						<figure>
+							<img src="images/website-1778529_640.png" alt="Screenshot of home page">
+						</figure>
+					</div><!-- end of .card-body div -->
+
+				</div><!-- end of #collapsOne div -->
 			</div> <!-- end of .card div -->
 		</div><!-- End of .accordian div -->
 
