@@ -18,7 +18,7 @@ function toggle() {
 
 	if (tracking) {
 		this.classList.remove("btn-danger");
-		this.classList.add("btn-success")
+		this.classList.add("btn-success");
 		this.innerText = "Start mouse tracking.";
 
 		btnStatus.innerText = "Tracking Disabled";

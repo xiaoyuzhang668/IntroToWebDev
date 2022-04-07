@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>CODE-ALONG: Display Evens</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+	<div class="container">
+		<h1>CODE-ALONG: Display Evens</h1>
+		<h3 class="text-center my-5">Sample</h3>
+		<form name="displayEven" class="needs-validation" onsubmit="return validate();" onreset="resetView();" novalidate>
+
+			<div class="form-group row">
+				<label for="startNum" class="col-3 col-form-label text-right">Starting Number</label>
+				<div class="col-9">
+					<input type="number" class="form-control" id="startNum" required>
+					<div class="invalid-feedback">
+						Starting number is required and must be a number.
+					</div>
+					<div style="display: none;" id="startNumM">
+						Ending number should be later than or equal to the starting number.
+					</div>
+				</div>
+			</div> <!-- end .form-group -->
+			<div class="form-group row">
+				<label for="endingNum" class="col-3 col-form-label text-right">Ending Number</label>
+				<div class="col-9">
+					<input type="number" class="form-control" id="endNum" required>
+					<div class="invalid-feedback">
+						Ending number is required and must be a number.
+					</div>
+					<div style="display: none;" id="endNumM">
+						Ending number should be later than or equal to the starting number.
+					</div>
+				</div>
+			</div> <!-- end .form-group -->
+			<div class="form-group row">
+				<label for="stepNum" class="col-3 col-form-label text-right">Step</label>
+				<div class="col-9">
+					<input type="number" min="0" class="form-control" id="stepNum" required>
+					<div class="invalid-feedback">
+						Step is required and must be a number.
+					</div>
+					<div id="stepNumM" style="display: none;">
+						Step should be a positive number.
+					</div>
+				</div>
+			</div> <!-- end .form-group -->
+			<div class="form-group row d-flex justify-content-center mt-5">
+				<button type="submit" id="submitButton" class="btn btn-primary">
+					Display Evens</button>
+			</div>
+		</form>
+		<div id="results">
+
+		</div>
+	</div> <!-- end .container -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="displayEven.js"></script>
+</body>
+
+</html>
