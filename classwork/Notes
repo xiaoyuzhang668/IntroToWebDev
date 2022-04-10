@@ -1,3 +1,8 @@
 Notes for correction:
 1. CODE-ALONG: Layout and Hyperlinks, Step 2: Apply Floats
 Copy the empty .clear-float div to the end of each of the other articles on the page, immediately above (below) each </article> tag.
+
+
+
+Notes for questions:
+1. how to change the default setting of Bootstrap, i.e.  change media query
