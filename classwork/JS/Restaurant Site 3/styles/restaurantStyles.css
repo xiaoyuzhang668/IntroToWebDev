@@ -1,0 +1,60 @@
+/*
+Creator: Li Chang Zhang
+Date created: April 10, 2022 
+*/
+/*note: page layout - using class "container", which set the padding and margin already. */
+body {
+	background-color: #fef9ff;
+	font-family: "Times New Roman", "Times", "serif";
+	color: #0d1f2d;
+}
+
+header h1 {
+	font-family: "Arial", "Helvetica", "sans-serif";
+}
+
+header,
+footer {
+	background-color: #5b7d87;
+	color: #fef9ff;
+	padding: 30px 10px 20px 10px;
+}
+
+h1 {
+	font-size: 2.5em;
+}
+
+a {
+	text-decoration: underline;
+}
+
+nav {
+	border-top: 3px dashed #546a7b;
+	border-bottom: 3px dashed #546a7b;
+	margin-top: 4px;
+	background-color: #e4c3ad;
+}
+
+a:visited {
+	color: #e4c3ad;
+}
+
+nav a {
+	background-color: #5b7d87;
+	color: #fef9ff;
+}
+
+nav a:hover {
+	background-color: #fef9ff;
+	color: #5b7d87;
+	border: 2px solid #5b7d87;
+}
+
+a:hover {
+	font-weight: bold;
+}
+
+a:active {
+	font-weight: bold;
+	text-decoration: none;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<title>Join a social network</title>
+	<link rel="stylesheet" href="styles.css">
+
+	<body>
+		<h1>Join a social network</h1>
+
+		<form action="https://wp.zybooks.com/form-viewer.php" target="_blank" method="POST" enctype="multipart/form-data">
+			<div>
+				<label for="fullName">Full name:</label>
+				<input type="text" id="fullName" name="fullName" placeholder="Full name" required>
+			</div>
+			<div>
+				<label for="email">Email address:</label>
+				<input type="email" id="email" name="email" placeholder="Email address" required>
+			</div>
+			<div>
+				<label for="about">About you:</label>
+				<textarea id="about" name="about" placeholder="Text area with 3 rows and 50 cols" rows="3" cols="50"></textarea>
+			</div>
+			<div>
+				<label for="picture">Photo:</label>
+				<input type="file" id="picture" name="picture">
+			</div>
+			<div>
+				<input type="submit" value="Submit">
+			</div>
+		</form>
+
+	</body>
+
+</html>
