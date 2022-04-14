@@ -1,0 +1,26 @@
+<style>
+   .important { background-color: yellow; }
+   .complete { text-decoration: line-through; }
+</style>
+<body>
+   <p>
+     To-do list:
+   </p>
+   <ul>
+      <li>Study for history exam</li>
+      <li>Get groceries for dinner</li>
+      <li>Volunteer at the children's center</li>
+      <li>Vacuum and dust room</li>
+   </ul>
+</body>
+// Add click callback to each <li>
+const listItems = document.querySelectorAll("li");
+for (let item of listItems) {
+  item.addEventListener("click", listItemClick);
+}
+
+function listItemClick(e) {
+   // Get clicked <li>
+  let item = e.target;
+  
+}

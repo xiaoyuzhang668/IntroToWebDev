@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Grade Distribution</title>
+	<style>
+		.bar0 {
+			background-color: #00C000;
+		}
+
+		.bar1 {
+			background-color: #309000;
+		}
+
+		.bar2 {
+			background-color: #606000;
+		}
+
+		.bar3 {
+			background-color: #903000;
+		}
+
+		.bar4 {
+			background-color: #C00000;
+		}
+
+		td {
+			vertical-align: bottom;
+		}
+
+		#distributionTable {
+			border: 2px solid black;
+		}
+
+	</style>
+</head>
+
+<body>
+	<table id="distributionTable">
+		<tbody id="nograph">
+			<tr>
+				<td>
+					No graph to display
+				</td>
+			</tr>
+		</tbody>
+		<tbody id="graph">
+			<tr>
+				<td>
+					<div style="height:30px" class="bar0"></div>
+				</td>
+				<td>
+					<div style="height:20px" class="bar1"></div>
+				</td>
+				<td>
+					<div style="height:10px" class="bar2"></div>
+				</td>
+				<td>
+					<div style="height:0px" class="bar3"></div>
+				</td>
+				<td>
+					<div style="height:20px" class="bar4"></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					A
+				</td>
+				<td>
+					B
+				</td>
+				<td>
+					C
+				</td>
+				<td>
+					D
+				</td>
+				<td>
+					E
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span id="a"></span></td>
+				<td>
+					<span id="b"></span>
+				</td>
+				<td>
+					<span id="c"></span>
+				</td>
+				<td>
+					<span id="d"></span>
+				</td>
+				<td>
+					<span id="e"></span>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<script src="index.js" async></script>
+</body>
+
+
+</html>

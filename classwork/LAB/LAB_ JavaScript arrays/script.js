@@ -1,8 +1,8 @@
 let nums = [];
-let evenNums = [];
-let oddNums = [];
 
 function divideArray(nums) {
+	let evenNums = [];
+	let oddNums = [];
 	for (let i = 0; i < nums.length; i++) {
 		if (nums[i] % 2 == 0) {
 			evenNums.push(nums[i]);
@@ -36,4 +36,5 @@ function divideArray(nums) {
 	}
 }
 
-divideArray(nums);
+let testNum = [67, 334, 343, 3342, 353, 33];
+divideArray(testNum);
