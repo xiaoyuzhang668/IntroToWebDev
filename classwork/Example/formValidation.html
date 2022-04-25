@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Terms of Service</title>
+
+
+<body>
+	<form id="tosForm" action="https://example.com" target="_blank" method="POST">
+		<label for="tos">I agree to the terms of service:</label>
+		<input type="checkbox" id="tos"><br>
+		<input type="submit">
+	</form>
+	<script>
+		function checkForm(event) {
+			let tosWidget = document.querySelector("#tos");
+
+			// Cancel form submission if tos not checked
+			if (!tosWidget.checked) {
+				event.preventDefault();
+			}
+		}
+
+		let formWidget = document.querySelector("#tosForm");
+		formWidget.addEventListener("submit", checkForm);
+
+		function checkForm(event) {
+			let tosWidget = document.querySelector("#tos");
+
+			// Cancel form submission if tos not checked
+			if (!tosWidget.checked) {
+				event.preventDefault();
+			}
+		}
+
+		let formWidget = document.querySelector("#tosForm");
+		formWidget.addEventListener("submit", checkForm);
+
+	</script>
+</body>
+
+</html>

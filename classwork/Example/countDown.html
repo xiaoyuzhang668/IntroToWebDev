@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+
+
+
+<body>
+	<p>Enter the countdown starting number, then click the start button.</p>
+	<input type="number" id="number" min="0" value="5">
+	<input type="button" id="startbutton" value="start">
+	<input type="button" id="stopbutton" value="stop" disabled>
+
+	<script>
+		let countdowntimerId = null; // stores unique identifier of interval timer
+		let number = document.getElementById("number");
+		let startbutton = document.getElementById("startbutton");
+		let stopbutton = document.getElementById("stopbutton");
+
+
+		function countdown() {
+			let num = parseInt(number.value) - 1;
+			if (num <= 0) {
+				num = 0;
+				startbutton.disabled = false;
+				stopbutton.disabled = true;
+				// stop countdown (countdowntimerId)
+				clearInterval(countdowntimerId);
+			}
+			number.value = num;
+
+		}
+
+
+		startbutton.addEventListener("click", function() {
+			//			if (number.value === 0) {
+			number.value = 5;
+			//			}
+			startbutton.disabled = true;
+			stopbutton.disabled = false;
+			// start countdown using interval timer and store returned unique identifier
+			countdowntimerId = setInterval(countdown, 1000);
+		});
+
+		stopbutton.addEventListener("click", function() {
+			startbutton.disabled = false;
+			stopbutton.disabled = true;
+			// stop countdown (countdowntimerId)
+			clearInterval(countdowntimerId);
+		});
+
+	</script>
+</body>
+
+</html>

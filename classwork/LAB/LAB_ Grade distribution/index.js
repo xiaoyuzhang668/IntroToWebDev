@@ -32,7 +32,7 @@ function buildDistributionArray(scoresArray) {
 			distributeArray[4]++;
 		}
 	}
-	console.log(distributeArray);
+
 	return distributeArray;
 }
 
@@ -59,28 +59,25 @@ function setTableContent(userInput) {
 		document.getElementById("c").innerHTML = graphNumber[2];
 		document.getElementById("d").innerHTML = graphNumber[3];
 		document.getElementById("e").innerHTML = graphNumber[4];
-		document.querySelector(".bar0").setAttribute("style", "height: 10px;");
-		document.querySelector(".bar1").setAttribute("style", "height: 20px;");
-		document.querySelector(".bar2").setAttribute("style", "height: 30px;");
-		document.querySelector(".bar3").setAttribute("style", "height: 40px;");
-		document.querySelector(".bar4").setAttribute("style", "height: 50px;");
+		return graphNumber;
 	}
-
-	//		set bar height for css style
-	let barHeight = [];
-	let barCss = [];
-	for (var j = 0; j < graphNumber[j]; j++) {
-		if (graphNumber[j] == 0) {
-			barHeight[j] = "height: 0px;";
-		} else {
-			barHeight[j] = graphNumber[j] * 10;
-			barHeight[j] = "height: " + barHeight[j] + "px;";
-		}
-		barCss.push(barHeight[j]);
-	}
-	console.log(barCss);
-	return barCss;
 }
+let result = setTableContent("568 65 87 654 76 5 45 32 32 45 85 6 343 5");
+console.log(result);
+//		set bar height for css style
+let barHeight = [];
+let barCss = [];
+for (var j = 0; j < result[j]; j++) {
+	if (result[j] == 0) {
+		barHeight[j] = "height: 0px;";
+	} else {
+		barHeight[j] = result[j] * 10;
+		barHeight[j] = "height: " + barHeight[j] + "px;";
+	}
+	barCss.push(barHeight[j]);
+}
+console.log(barCss);
+
+
 
 //original grade entry of string scores
-setTableContent("5 63 68 65 87 654 76 54 77 75 46 45 32 32 45 85 6 343  5");

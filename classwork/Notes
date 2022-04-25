@@ -2,7 +2,15 @@ Notes for correction:
 1. CODE-ALONG: Layout and Hyperlinks, Step 2: Apply Floats
 Copy the empty .clear-float div to the end of each of the other articles on the page, immediately above (below) each </article> tag.
 
-
+git add --all
+git commit -m "commit message"
+git pull origin main
+git push origin main
 
 Notes for questions:
 1. how to change the default setting of Bootstrap, i.e.  change media query
+2. 6.8.9: Practice searching an array
+3. getter and setter, need instruction
+4. Exception handling
+5. 7.7.1: Form validation.
+6. CHALLENGE ACTIVITY 7.5.1: Timers.

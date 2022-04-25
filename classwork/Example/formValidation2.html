@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>Terms of Service</title>
+<!--<script src="validate.js" defer></script>-->
+<style>
+	/*	label {*/
+	display: block;
+	margin-top: 10px;
+	}
+
+	input {
+		display: block;
+		margin-bottom: 10px;
+	}
+
+	input:invalid {
+		background-color: #ffdddd;
+	}
+
+	input:valid {
+		background-color: #ddffdd;
+	}
+
+</style>
+
+<body>
+	<form id="tosForm">
+		<label for="userAge">Age:</label>
+		<input type="number" id="userAge">
+		<input type="range" name="age" min="5" max="120">
+		<input type="checkbox" name="agree" required>
+		<input type="password" name="password" minlength="10" maxlength="16">
+		<input type="text" name="credit" pattern="^\d{16}$" title="exactly 16 digits">
+		<!--		<input type="submit">-->
+
+		<label for="screenName">Screen name:</label>
+		<input type="text" id="screenName" name="screenName" placeholder="Screen name">
+		<label for="zipcode">ZIP code:</label>
+		<input type="text" id="zipcode" name="zipcode" placeholder="5-digit ZIP code">
+		<label for="tos">Type yes if you agree to the terms of service:</label>
+		<input type="text" name="agreement" id="tos">
+		<input type="button" id="validate" value="Validate Form">
+	</form>
+	<script>
+		function validateForm(event) {
+			let myForm = document.querySelector("#tosForm");
+			let userAge = myForm.userAge;
+			myForm.userAge.style.backgroundColor = "LightGreen";
+			myForm.screenName.style.backgroundColor = "LightGreen";
+			myForm.zipcode.style.backgroundColor = "LightGreen";
+			myForm.tos.style.backgroundColor = "LightGreen";
+
+			if (userAge.value === "") {
+				userAge.style.backgroundColor = "Orange";
+				event.preventDefault();
+			}
+
+			// Replace false with an expression that checks whether myForm.screenName.value is empty.
+			if (false) {
+				myForm.screenName.style.backgroundColor = "Orange";
+			}
+
+			// Replace false with an expression that checks whether the length of myForm.zip is not 5.
+			if (false) {
+				myForm.zip.style.backgroundColor = "Orange";
+			}
+
+
+			let zipcodeValid = false;
+			let zipcodeWidget = document.querySelector("#zipcode");
+			zipcodeWidget.addEventListener("input", checkZipcode);
+
+			function checkZipcode() {
+				let zip = zipcodeWidget.value;
+				zip = zip.trim();
+				zipcodeValid = zip.length == 5 && !isNaN(zip);
+			}
+
+			let formWidget = document.querySelector("#tosForm");
+			formWidget.addEventListener("submit", checkForm);
+
+			function checkForm(event) {
+				if (!zipcodeValid) {
+					event.preventDefault();
+					formWidget.zipcode.style.backgroundColor = "Orange";
+				}
+			}
+			// Replace false with an expression that checks whether myForm.tos is not "yes".
+			if (false) {
+				myForm.tos.style.backgroundColor = "Orange";
+			}
+		}
+
+		let myForm = document.querySelector("#tosForm");
+		myForm.validate.addEventListener("click", validateForm);
+
+	</script>
+</body>
+
+</html>

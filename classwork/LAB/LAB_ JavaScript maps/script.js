@@ -16,4 +16,5 @@ function calcWordFrequencies() {
 		console.log(objElement + " " + obj[objElement]);
 	}
 }
+
 calcWordFrequencies();
