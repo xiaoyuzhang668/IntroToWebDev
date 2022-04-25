@@ -10,9 +10,9 @@ function startAnimation(e) {
 	let clickX = e.clientX;
 	let clickY = e.clientY;
 
-	//	if ((clickX) && (clickY)) {
-	timerId = setInterval(moveImage(clickX, clickY), 10);
-	//	}
+	if ((clickX) && (clickY)) {
+		timerId = setInterval(moveImage(clickX, clickY), 10);
+	}
 }
 
 function moveImage(x, y) {
@@ -27,10 +27,10 @@ function moveImage(x, y) {
 	const centerX = Math.round(x - (img.width / 2));
 	const centerY = Math.round(y - (img.height / 2));
 
-		if (imgX === centerX) {
-			clearInterval(timerId);
-			timerId = null;
-		}
+	if (imgX === centerX) {
+		clearInterval(timerId);
+		timerId = null;
+	}
 
 	// Move 1 pixel in both directions toward the click
 	if (imgX < centerX) {

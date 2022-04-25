@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Lucky Sevens</title>
+
+	<!-- Bootstrap CDN copied from https://getbootstrap.com/docs/4.1/getting-started/introduction/ -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<style>
+		.input-icon {
+			position: relative;
+		}
+
+		.input-icon>i {
+			position: absolute;
+			display: block;
+			transform: translate(0, -50%);
+			top: 50%;
+			pointer-events: none;
+			width: 25px;
+			text-align: center;
+			font-style: normal;
+		}
+
+		.input-icon>input {
+			padding-left: 25px;
+			padding-right: 0;
+		}
+
+	</style>
+
+	<!--	<script src="lunckysevens.js"></script>-->
+</head>
+
+<body>
+	<div class="container text-center">
+		<h1 class="my-5">Lucky Sevens</h1>
+		<div class="form-group d-flex flex-row align-items-center justify-content-center">
+			<label for="startAt">Starting Bet:</label>
+			<div class="input-icon mx-3">
+				<input type="number" value="0.00" id="moneyHad" readonly class="form-control bg-light rounded">
+				<i>$</i>
+			</div>
+		</div>
+
+		<div>
+			<button class="my-5 btn btn-primary" id="playBtn">Play</button></div>
+	</div> <!-- End of .container div -->
+
+	<!-- CDN links copied from https://getbootstrap.com/docs/4.1/getting-started/introduction/ -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script>
+		var moneyHad = prompt("How many dollars you have to bet?");
+		var input = document.getElementById("moneyHad");
+		var playBtn = document.getElementById("playBtn");
+
+		window.addEventListener("DOMContentLoaded", moneyEntered);
+
+		function moneyEntered() {
+			if ((moneyHad <= 0) && (moneyHad != "")) {
+				alert("Money entered should be more than 0 dollars.");
+			} else {
+				input.value = moneyHad;
+				return input.value;
+			}
+		}
+
+		function rollDice() {
+
+			let dice1 = Math.floor(Math.random() * 6) + 1;
+			let dice2 = Math.floor(Math.random() * 6) + 1;
+			let sumDice = dice1 + dice2;
+
+			if (sumDice === 7) {
+				input.value += 4;
+			} else {
+				input.value -= 1;
+			}
+			console.log(dice1);
+			console.log(dice2);
+			console.log(sumDice);
+
+		}
+
+		// for (var i = 0; i < 3; i++) { // input.value=moneyHad; // rollDice; // }
+
+		playBtn.addEventListener("click", rollDice);
+		console.log("input values is " + input.value);
+
+	</script>
+</body>
+
+</html>
