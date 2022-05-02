@@ -14,3 +14,5 @@ Notes for questions:
 4. Exception handling
 5. 7.7.1: Form validation.
 6. CHALLENGE ACTIVITY 7.5.1: Timers.
+
+email address regex: [a-zA-Z0-9_.+_]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+

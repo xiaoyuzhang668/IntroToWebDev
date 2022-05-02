@@ -1,6 +1,5 @@
 //Set element variable
 var contactUs = document.forms["contactUs"];
-var name = document.getElementById("name");
 var email = document.getElementById("email");
 var phone = document.getElementById("phone");
 var info = document.getElementById("info");
@@ -20,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			alert("Name is mandatory field");
 			return false;
 		}
+		return name;
 	});
 });
 //email field should not be empty
@@ -29,7 +29,7 @@ function validateEmail() {
 		return false;
 	}
 }
-email.addEventListener('change', validateEmail);
+email.addEventListener('input', validateEmail);
 //phone field should contain only number
 function isNumberKey(evt) {
 	var charCode = (evt.which) ? evt.which : evt.keyCode;
@@ -83,14 +83,12 @@ contacts.forEach(function (contact) {
 
 //valiate form
 function validate() {
-	var isValid = false;
 	contactUs.className = "needs-validation";
 	if (!contactUs.checkValidity()) {
 		event.preventDefault();
 		event.stopPropagation();
 		contactUs.className = "was-validated";
 	}
-	isValid = true;
 
 	var contacts = document.getElementsByName("contact");
 	var isChecked = false;
@@ -104,8 +102,9 @@ function validate() {
 			event.preventDefault();
 		}
 	}
-
-	if ((isChecked) && (name.value != null) && email.value != null && phone.value != null && info.value != null && emal.indexOf("@") != -1 && name.value != "" & email.value != "" && phone.value != "" && info.value != "") {
+	var name = document.getElementById("name");
+	var re = new RegExp('[a-zA-Z0-9]+@[a-zA-Z0-9]+');
+	if ((isChecked) && (name.value != null) && (email.value != null) && (phone.value != null) && (info.value != null) && (email.value.indexOf("@") != -1) && (name.value != "") && (email.value != "") && (phone.value != "") && (info.value != "") && re.test(email.value)) {
 		message.innerHTML = "All fields in the form are valid. ";
 	} else {
 		message.innerHTML = "At least one field in the form is not valid.";
@@ -118,5 +117,4 @@ function resetView() {
 	contactUs.className = "needs-validation";
 	error.setAttribute("hidden", true);
 	message.innerHTML = "";
-
 }
