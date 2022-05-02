@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Media Queries</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="mediaQuery.css">
+</head>
+
+<body>
+	<nav>
+		<a href="#home">Home</a>
+		<ul>
+
+			<li>
+				<a href="#Home">Learn More</a>
+			</li>
+			<li>
+				<a href="#Home">About</a>
+			</li>
+			<li>
+				<a href="#Home">Contact</a>
+			</li>
+
+		</ul>
+		<a href="#signup">Sign Up</a>
+	</nav>
+	<h1>Media Queries</h1>
+	<div class="btn-toolbar" role="toolbar">
+		<div class="btn btn-group" role="group">
+			<button type="button" class="btn btn-secondary mr-2">1</button>
+			<button type="button" class="btn btn-secondary mr-2">2</button>
+			<button type="button" class="btn btn-secondary">3</button>
+		</div>
+	</div>
+	<div class="container">
+		<form>
+			<div class="form-row">
+				<div class="form-group col">
+					<label for="email">Email address</label>
+					<input type="email" class="form-control" id="email" placeholder="name@example.com">
+				</div>
+				<div class="form-group col">
+					<label for="option">Example select</label>
+					<select class="form-control" id="option">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="multiple">Example multiple select</label>
+					<select multiple class="form-control" id="multiple">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					</select>
+				</div>
+				<div class="form-group col-md-6">
+					<label for="textArea">Example textarea</label>
+					<textarea class="form-control" id="textArea" rows="3"></textarea>
+				</div>
+			</div>
+
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" value="" id="check">
+				<label class="form-check-label" for="check">
+					Default checkbox
+				</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
+				<label class="form-check-label" for="defaultCheck2">
+					Disabled checkbox
+				</label>
+			</div>
+			<div class="custom-control custom-checkbox">
+
+				<input type="checkbox" class="custom-control-input" id="customCheck1">
+				<label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+				<div class="custom-control custom-checkbox">
+					<input type="checkbox" class="custom-control-input" id="customCheck1">
+					<label class="custom-control-label" for="customCheck1">Check this custom checkbox</label></div>
+
+				<div class="custom-control custom-checkbox">
+					<div class="form-group"><input type="checkbox" class="custom-control-input" id="customCheck2">
+						<label class="custom-control-label" for="customCheck2">Check this custom checkbox</label>
+					</div>
+					<div class="custom-control custom-checkbox">
+						<input type="checkbox" class="custom-control-input" id="customCheck3">
+						<label class="custom-control-label" for="customCheck3">Check this custom checkbox</label>
+					</div>
+					<div class="custom-control custom-checkbox">
+						<input type="checkbox" class="custom-control-input" id="customCheck4">
+						<label class="custom-control-label" for="customCheck4">Check this custom checkbox</label></div>
+				</div>
+			</div>
+			<button type="sumit" class="btn btn-success">Submit</button>
+		</form>
+	</div>
+</body>
+
+</html>

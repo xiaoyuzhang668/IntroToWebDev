@@ -10,14 +10,7 @@ let movie = { // Code will be tested with different actors and movies
 	},
 	roleOf: function (actorName) {
 		//		for (let i in this.cast) {
-		if (this.cast[actorName] !== undefined) {
-			console.log(this.cast[actorName]);
-			return true;
-		} else {
-			let message = "Not in this movie.";
-			console.log(message);
-			return true;
-		}
+
 		//		}
 	}
 };

@@ -68,7 +68,7 @@ console.log(result);
 let barHeight = [];
 let barCss = [];
 for (var j = 0; j < result[j]; j++) {
-	if (result[j] == 0) {
+	if (result[j] == 0) {w
 		barHeight[j] = "height: 0px;";
 	} else {
 		barHeight[j] = result[j] * 10;

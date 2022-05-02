@@ -1,0 +1,56 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	color: red;
+}
+
+nav {
+	font-size: 1.5em;
+	/*	justify-content: space-between;*/
+}
+
+ul,
+li {
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+
+nav,
+ul {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+}
+
+@media (min-width: 768px) {
+	h1 {
+		font-size: 3em;
+		color: blue;
+	}
+
+	nav,
+	ul {
+		flex-direction: row;
+	}
+
+	nav {
+		justify-content: space-between;
+	}
+
+	ul {
+		justify-content: space-evenly;
+		flex: 1;
+		max-width: 50%;
+	}
+
+	@media (min-width: 992px) {
+		h1 {
+			font-size: 4em;
+			color: green;
+		}
+	}

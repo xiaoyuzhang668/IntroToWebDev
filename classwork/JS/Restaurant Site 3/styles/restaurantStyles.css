@@ -36,7 +36,7 @@ nav a:visited {
 	color: #e4c3ad !important;
 }
 
-nav a {
+nav a.nav-link {
 	background-color: #5b7d87 !important;
 	color: #fef9ff !important;
 }
