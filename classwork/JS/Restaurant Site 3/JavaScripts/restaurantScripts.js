@@ -105,12 +105,12 @@ function validate() {
 		}
 	}
 
-	if ((isChecked) && name.length > 0 && email.length > 0 && phone.length > 0 && info.length > 0 && indexOf(email) != -1) {
-		message.innerHTML = "All fields in the form are valid.";
-		event.preventDefault();
-		event.stopPropagation();
+	if ((isChecked) && (name.value != null) && email.value != null && phone.value != null && info.value != null && emal.indexOf("@") != -1 && name.value != "" & email.value != "" && phone.value != "" && info.value != "") {
+		message.innerHTML = "All fields in the form are valid. ";
 	} else {
 		message.innerHTML = "At least one field in the form is not valid.";
+		event.preventDefault();
+		event.stopPropagation();
 	}
 }
 
