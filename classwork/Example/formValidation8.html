@@ -1,0 +1,53 @@
+<html lang="en">
+<meta charset="UTF-8">
+<title>User Information</title>
+<style>
+	label {
+		display: block;
+		margin-top: 10px;
+	}
+
+	input {
+		display: block;
+		margin-bottom: 10px;
+	}
+
+	form:invalid {
+		border: 5px solid #ffdddd;
+	}
+
+	form:valid {
+		border: 5px solid #ddffdd;
+
+	}
+
+	input:valid {
+		background-color: #ddffdd;
+	}
+
+	input:invalid {
+		background-color: #ffdddd;
+	}
+
+	input[type="submit"] {
+		background-color: buttonface;
+	}
+
+</style>
+
+<body>
+	<form action="https://wp.zybooks.com/form-viewer.php" target="_blank" method="POST">
+		<label for="dob">Date of birth:</label>
+		<input type="date" name="dob" id="dob" required>
+
+		<label for="creditCard">Credit card number:</label>
+		<input type="text" name="creditCard" id="creditCard" maxlength="16" pattern="^\d{16}$" title="Exactly 16 digits" required>
+
+		<label for="emailAddr">Email address:</label>
+		<input type="email" name="emailAddr" id="emailAddr" required>
+
+		<input type="submit">
+	</form>
+</body>
+
+</html>

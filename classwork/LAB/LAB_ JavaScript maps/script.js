@@ -1,19 +1,23 @@
 function calcWordFrequencies() {
-	let arr = [];
-	const obj = {};
+	let arrListed = [];
+	const objListed = {};
 	let listWords = prompt("Please enter a list of words seperated by space:");
-	arr = listWords.split(" ");
+	arrListed = listWords.split(" ");
 
-	for (const element of arr) {
-		if (obj[element]) {
-			obj[element] += 1;
+	//	get map object; including key and value of total count 
+	for (const a of arrListed) {
+		if (objListed[a]) {
+			objListed[a] += 1;
 		} else {
-			obj[element] = 1;
+			objListed[a] = 1;
 		}
 	}
 
-	for (let objElement in obj) {
-		console.log(objElement + " " + obj[objElement]);
+	//key value pair displayed in map, excluding when key is empty space
+	for (let e in objListed) {
+		if (e != "") {
+			console.log(e + " " + objListed[e]);
+		}
 	}
 }
 

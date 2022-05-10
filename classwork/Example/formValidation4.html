@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>User Information</title>
+<style>
+	label {
+		display: block;
+		margin-top: 10px;
+	}
+
+	input {
+		display: block;
+		margin-bottom: 10px;
+	}
+
+	form:invalid {
+		border: 5px solid #ffdddd;
+	}
+
+	form:valid {
+		border: 5px solid #ddffdd;
+	}
+
+	input[type="submit"] {
+		background-color: buttonface;
+	}
+
+	input:required~label::after {
+		content: " (required)";
+		font-size: 0.8em;
+		color: #000;
+	}
+
+	input:required {
+		border-color: pink;
+	}
+
+	.submitted input:invalid+label::after {
+		content: ' ⨉';
+	}
+
+</style>
+
+<body>
+	<form action="https://wp.zybooks.com/form-viewer.php" target="_blank" method="POST">
+		<label for="dob">Date of birth:</label>
+		<input type="date" name="dob" id="dob" required>
+
+		<label for="creditCard">Credit card number:</label>
+		<input type="text" name="creditCard" id="creditCard" maxlength="16" pattern="^\d{16}$" title="Exactly 16 digits" required>
+
+		<label for="emailAddr">Email address:</label>
+		<input type="email" name="emailAddr" id="emailAddr" required>
+
+		<input type="submit" id="formSubmit">
+	</form>
+	<script>
+		let formSubmit = docoument.getElementById("formSubmit");
+		formSubmit.addEventListener('click', function(e) {
+			e.currentTarget.classList.add('submitted');
+			// Your fallback form validation function
+		});
+		//		function validateForm(event) {
+		// let myForm = document.querySelector("form");
+		// let dob = document.querySelector("#dob");
+		// let creditCard = document.querySelector("creditCard");
+		// let emailAddr = document.querySelector("emailAddr");
+		//
+		// // Replace false with an expression that checks whether myForm.screenName.value is empty.
+		// if (dob.length = 0) {
+		// dob.style.backgroundColor = "Orange";
+		// }
+		//
+		// // Replace false with an expression that checks whether the length of myForm.zip is not 5.
+		// if (creditCard.length != 5) {
+		// creditCard.backgroundColor = "Orange";
+		// }
+		//
+		// // Replace false with an expression that checks whether myForm.tos is not "yes".
+		// // if (myForm.tos.value != "yes") {
+		// // myForm.tos.style.backgroundColor = "Orange";
+		// // }
+		// }
+		//
+		// let formSubmit = document.querySelector("#formSubmit");
+		// formSubmit.addEventListener("click", validateForm);
+
+	</script>
+</body>
+
+</html>

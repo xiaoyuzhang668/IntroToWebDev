@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Terms of Service</title>
+<script src="validate.js" defer></script>
+
+<body>
+	<form id="tosForm">
+		<label for="zipcode">ZIP:</label>
+		<input type="text" id="zipcode">
+		<input type="submit">
+	</form>
+	<!--	ELEMENT ATTRIBUTES HTML FORM VALIDATION-->
+	<form>
+		<input type="range" name="age" min="5" max="120">
+		<input type="checkbox" name="agree" required>
+		<input type="password" name="password" minlength="10" maxlength="16">
+		<input type="text" name="credit" pattern="^\d{16}$" title="exactly 16 digits">
+		<input type="submit">
+	</form>
+
+
+	<script>
+		// validate.js
+
+		let zipcodeValid = false;
+		let zipcodeWidget = document.querySelector("#zipcode");
+		zipcodeWidget.addEventListener("input", checkZipcode);
+
+		function checkZipcode() {
+			let zip = zipcodeWidget.value;
+			zip = zip.trim();
+			zipcodeValid = zip.length == 5 && !isNaN(zip);
+		}
+
+		let formWidget = document.querySelector("#tosForm");
+		formWidget.addEventListener("submit", checkForm);
+
+		function checkForm(event) {
+			if (!zipcodeValid) {
+				event.preventDefault();
+			}
+		}
+
+	</script>
+</body>
+
+</html>

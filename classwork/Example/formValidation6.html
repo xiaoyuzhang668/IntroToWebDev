@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Form Validation</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+
+		html {
+			font-size: 16px;
+			font-weight: 300;
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+				Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+			line-height: 1.5;
+			color: #eee;
+			background-color: #333;
+		}
+
+		body {
+			background-color: #333;
+			min-height: 100vh;
+		}
+
+		header {
+			padding: 1rem 2rem;
+		}
+
+		h1 {
+			color: orange;
+		}
+
+		h2 {
+			color: orangered;
+		}
+
+		form {
+			max-width: 600px;
+		}
+
+		form>p {
+			padding: 1rem 2rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
+			box-sizing: border-box;
+			/* for the underlay */
+			position: relative;
+			z-index: 1;
+			overflow: hidden;
+			/* for the label to inherit */
+			color: #eee;
+		}
+
+		form p::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: -1;
+			background-color: hsla(200, 10%, 50%, 0.64);
+			transform: translateX(-110%);
+			transition: transform 0.2s ease-out;
+		}
+
+		form p:focus-within {
+			/* for the label to inherit */
+			color: #fff;
+			text-shadow: 1px 1px 1px #000;
+		}
+
+		form p:focus-within::before {
+			transform: translateX(0);
+		}
+
+		label {
+			font-size: 1.2rem;
+			flex-basis: 30%;
+			padding: 0.25rem 1px;
+			text-align: start;
+			/* in cooperation with form p:focus-within */
+			color: inherit;
+			text-shadow: inherit;
+		}
+
+		input {
+			font-size: 1.2rem;
+			flex-basis: 100%;
+			width: calc(100% - 2px);
+			padding: 0.25rem 1rem;
+			border-radius: 0.25rem;
+		}
+
+		select,
+		option {
+			font-size: 1.2rem;
+			flex-basis: 100%;
+			width: calc(100% - 2px);
+			padding: 0.25rem 1rem;
+		}
+
+		button {
+			border: none;
+			background-color: cornflowerblue;
+			color: #fff;
+			flex-basis: 100%;
+			width: calc(100% - 2px);
+			padding: 0.5rem 1rem;
+			font-size: 1.5rem;
+		}
+
+		.instructions {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
+			color: #ccc;
+		}
+
+		.instructions span {
+			padding-left: 2rem;
+		}
+
+		input:focus,
+		select:focus,
+		textarea:focus {
+			/* field currently has focus */
+			background-color: gold;
+		}
+
+		input:read-only {
+			/* field marked as read-only */
+		}
+
+		input:read-write {
+			/* not disabled or read-only */
+		}
+
+		input:disabled {
+			/* disabled attribute in html element */
+		}
+
+		input:required,
+		select:required,
+		option:required {
+			/* input field IS marked as required */
+			border-color: red;
+		}
+
+		input:optional {
+			/* input field not marked as required */
+		}
+
+		:placeholder-shown {
+			/* placeholder is showing... not user text */
+			background-color: lightpink;
+		}
+
+		::placeholder {
+			/* style the placeholder text */
+			letter-spacing: 1rem;
+		}
+
+		input:valid {
+			/* passed all validation based on validityState properties */
+			background-color: cornflowerblue;
+		}
+
+		input:invalid {
+			/* failed some validation */
+			border-left: 4px solid hsl(0, 50%, 50%);
+			background-color: hsl(0, 50%, 70%);
+		}
+
+		:in-range {
+			/* value is the right length and not too long or short */
+		}
+
+		:out-of-range {
+			/* value too short, too long, too small or too big */
+			border-right: 2rem solid black;
+		}
+
+		/*
+  
+*/
+
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>Form Validation Part I</h1>
+		<h2>The HTML and CSS</h2>
+	</header>
+	<main>
+		<!--
+        Form elements' attributes
+        id
+        name
+        type
+        value
+        checked
+        selected
+        inputmode
+        enterkeyhint
+        autocomplete
+        placeholder
+        required
+        readonly
+        disabled
+        min
+        max
+        step
+        minlength
+        maxlength
+        pattern
+        novalidate
+      -->
+		<form name="sampleForm" action="#" method="POST" autocomplete="off">
+			<p>
+				<label for="fullname">Full Name</label>
+				<input type="text" inputmode="text" id="fullname" name="fullname" enterkeyhint="next" autocomplete="off" placeholder="Enter your full name" required />
+				<span class="instructions"><span class="errMessage"></span></span>
+			</p>
+			<p>
+				<label for="email">Email</label>
+				<input type="email" inputmode="email" id="email" name="email" enterkeyhint="next" autocomplete="off" placeholder="Enter your email address" required />
+				<span class="instructions"><span class="errMessage"></span></span>
+			</p>
+			<p>
+				<label for="pass">Password</label>
+				<input type="password" id="pass" name="pass" enterkeyhint="send" autocomplete="off" maxlength="20" minlength="8" required />
+				<span class="instructions"><span class="errMessage"></span>
+					<span class="upper">At least ONE uppercase letter</span>
+					<span class="lower">At least ONE lowercase letter</span>
+					<span class="num">At least ONE number</span>
+					<span class="len">At least 10 characters long</span>
+					<span class="invalid">Only allowed special characters are ! @ # $ % ^ & * ( ) . , ? ; :
+						~
+					</span>
+				</span>
+			</p>
+			<p>
+				<label for="cell">Cellphone</label>
+				<input type="text" inputmode="numeric" id="cell" name="cell" enterkeyhint="next" autocomplete="off" pattern="[\d]{7,14}" required /><!-- input type=number adds the stepper -->
+				<span class="instructions"><span class="errMessage"></span></span>
+			</p>
+			<p>
+				<label for="lang">Language</label>
+				<select id="lang" autocomplete="off">
+					<option value="">Choose a Language</option>
+					<option value="en" lang="en">English</option>
+					<option value="sv" lang="sv">Svensk</option>
+					<option value="ru" lang="ru">Русский</option>
+					<option value="de" lang="de">Deutsch</option>
+					<option value="es" lang="es">Español</option>
+					<option value="fr" lang="fr">Français</option>
+				</select>
+				<span class="instructions"><span class="errMessage"></span></span>
+			</p>
+			<p>
+				<label for="pets">Number of Pets</label>
+				<input type="number" inputmode="numeric" id="pets" name="pets" enterkeyhint="next" autocomplete="off" min="0" max="50" step="2" /><!-- input type=number adds the stepper -->
+				<span class="instructions"><span class="errMessage"></span></span>
+			</p>
+			<p>
+				<button id="btnSend">Send</button>
+			</p>
+		</form>
+	</main>
+	<script type="module" src="js/api.js"></script>
+</body>
+
+</html>

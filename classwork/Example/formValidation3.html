@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>Terms of Service</title>
+<style>
+	label {
+		display: block;
+		margin-top: 10px;
+	}
+
+	input {
+		display: block;
+		margin-bottom: 10px;
+	}
+
+</style>
+
+<body>
+	<form id="myForm">
+		<label for="screenName">Screen name:</label>
+		<input type="text" id="screenName" name="screenName" placeholder="Screen name">
+		<label for="zip">ZIP code:</label>
+		<input type="text" id="zip" name="zip" placeholder="5-digit ZIP code">
+		<label for="tos">Type yes if you agree to the terms of service:</label>
+		<input type="text" name="agreement" id="tos">
+		<input type="button" id="validate" value="Validate Form">
+	</form>
+	<script>
+		function validateForm(event) {
+			let myForm = document.querySelector("#myForm");
+
+			myForm.screenName.style.backgroundColor = "LightGreen";
+			myForm.zip.style.backgroundColor = "LightGreen";
+			myForm.tos.style.backgroundColor = "LightGreen";
+
+			// Replace false with an expression that checks whether myForm.screenName.value is empty.
+			if (myForm.screenName.length = 0) {
+				myForm.screenName.style.backgroundColor = "Orange";
+			}
+
+			// Replace false with an expression that checks whether the length of myForm.zip is not 5.
+			if (myForm.zip.length != 5) {
+				myForm.zip.style.backgroundColor = "Orange";
+			}
+
+			// Replace false with an expression that checks whether myForm.tos is not "yes".
+			if (myForm.tos.value.length != "yes") {
+				myForm.tos.style.backgroundColor = "Orange";
+			}
+		}
+
+		let myForm = document.querySelector("#myForm");
+		myForm.validate.addEventListener("click", validateForm);
+
+	</script>
+</body>
+
+</html>

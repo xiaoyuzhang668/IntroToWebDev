@@ -16,3 +16,10 @@ Notes for questions:
 6. CHALLENGE ACTIVITY 7.5.1: Timers.
 
 email address regex: [a-zA-Z0-9_.+_]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+
+
+TRUTHY vs.  FALSY:  false, 0, "", null, undefined, NaN
+" " is TRUTHY
+
+1. bootstrap breakpoint
+2. bootstrap need validation
+3. js map lab
