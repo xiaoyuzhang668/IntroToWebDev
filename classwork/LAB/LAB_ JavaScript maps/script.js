@@ -1,3 +1,4 @@
+//prompt() function to read a list of words (separated by spaces).
 function calcWordFrequencies() {
 	let arrListed = [];
 	const objListed = {};

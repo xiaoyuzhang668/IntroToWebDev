@@ -1,10 +1,3 @@
-window.addEventListener("DOMContentLoaded", domLoaded);
-let btn = document.getElementById("convertButton");
-let txtC = document.getElementById("cInput");
-let txtF = document.getElementById("fInput");
-let img = document.getElementById("weatherImage");
-let err = document.getElementById("errorMessage");
-
 function domLoaded() {
 	// TODO: Complete the function
 	btn.addEventListener("click", submitE);
@@ -12,6 +5,13 @@ function domLoaded() {
 	txtF.addEventListener("input", clearC);
 }
 
+window.addEventListener("DOMContentLoaded", domLoaded);
+let btn = document.getElementById("convertButton");
+let txtC = document.getElementById("cInput");
+let txtF = document.getElementById("fInput");
+let img = document.getElementById("weatherImage");
+let err = document.getElementById("errorMessage");
+txtC.value = "why";
 function convertCtoF(degreesCelsius) {
 	// TODO: Complete the function
 	let c = parseFloat(degreesCelsius);
