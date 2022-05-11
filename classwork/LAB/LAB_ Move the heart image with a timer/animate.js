@@ -1,21 +1,26 @@
-let timerId = null;
+let timerId;
 
 window.addEventListener("DOMContentLoaded", function () {
 	document.addEventListener("click", startAnimation);
 });
 
 function startAnimation(e) {
-
 	// Get mouse coordinates
 	let clickX = e.clientX;
 	let clickY = e.clientY;
 
-	if ((clickX) && (clickY)) {
-		timerId = setInterval(moveImage(clickX, clickY), 10);
+	//	when mouse click, stop the previous movement timer
+	if (timerId) {
+		clearInterval(moveImage(clickX, clickY));
 	}
+	//	if ((clickX) && (clickY)) {
+	timerId = setInterval(moveImage(clickX, clickY), 10);
+	//	}
+	//	console.log("begin movement");
 }
 
 function moveImage(x, y) {
+	//	console.log("not continue automatically");
 	const img = document.querySelector("img");
 
 	// Determine location of image

@@ -1,45 +1,44 @@
-function domLoaded() {
-	// TODO: Complete the function
-	btn.addEventListener("click", submitE);
-	txtC.addEventListener("input", clearF);
-	txtF.addEventListener("input", clearC);
-}
-
-window.addEventListener("DOMContentLoaded", domLoaded);
 let btn = document.getElementById("convertButton");
 let txtC = document.getElementById("cInput");
 let txtF = document.getElementById("fInput");
 let img = document.getElementById("weatherImage");
 let err = document.getElementById("errorMessage");
-txtC.value = "why";
-function convertCtoF(degreesCelsius) {
+
+function domLoaded() {
 	// TODO: Complete the function
-	let c = parseFloat(degreesCelsius);
-	if (isNaN(c)) {
-		err.innerHTML = degreesCelsius + " is not a number";
-	} else {
-		err.innerHTML = "";
-		txtF.value = c * 9 / 5 + 32;
+	btn.addEventListener("click", submitE);
+	txtC.addEventListener("input", function () {
+		txtF.value = "";
+	});
+	txtF.addEventListener("input", function () {
+		txtC.value = "";
+	});
+}
+window.addEventListener("DOMContentLoaded", domLoaded);
+
+function convertCtoF(degreesC) {
+	// TODO: Complete the function
+	if (degreesC != null) {
+		if (isNaN(degreesC)) {
+			err.innerHTML = degreesC + " is not a number";
+		} else {
+			err.innerHTML = "";
+			txtF.value = parseFloat(degreesC) * 9 / 5 + 32;
+		}
 	}
 }
 
-function convertFtoC(degreesFahrenheit) {
+function convertFtoC(degreesF) {
 	// TODO: Complete the function
-	let f = parseFloat(degreesFahrenheit);
-	if (isNaN(f)) {
-		err.innerHTML = degreesFahrenheit + " is not a number";
-	} else {
-		err.innerHTML = "";
-		txtC.value = (f - 32) * 5 / 9;
+	if (degreesF != null) {
+		if (isNaN(degreesF)) {
+			err.innerHTML = degreesF + " is not a number";
+		} else {
+			err.innerHTML = "";
+			txtC.value = (parseFloat(degreesF) - 32) * 5 / 9;
+		}
 	}
-}
 
-function clearF() {
-	txtF.value = "";
-}
-
-function clearC() {
-	txtC.value = "";
 }
 
 function submitE() {
@@ -49,7 +48,7 @@ function submitE() {
 	if (txtF.value != "") {
 		convertFtoC(txtF.value);
 	}
-	let f = parseFloat(txtF.value);
+	let f = txtF.value;
 	switch (true) {
 		case f > 50:
 			img.setAttribute("src", "warm.png");

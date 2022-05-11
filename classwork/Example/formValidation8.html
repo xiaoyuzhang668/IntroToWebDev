@@ -36,7 +36,7 @@
 </style>
 
 <body>
-	<form action="https://wp.zybooks.com/form-viewer.php" target="_blank" method="POST">
+	<form action=# target="_blank" method="POST">
 		<label for="dob">Date of birth:</label>
 		<input type="date" name="dob" id="dob" required>
 
@@ -45,9 +45,24 @@
 
 		<label for="emailAddr">Email address:</label>
 		<input type="email" name="emailAddr" id="emailAddr" required>
-
-		<input type="submit">
+		<div id="message"></div>
+		<input type="submit" id="submitForm">
 	</form>
+	<script>
+		let submitForm = document.getElementById("submitForm")
+		let creditCard = document.getElementById("creditCard")
+		let email = document.getElementById("emailAddr")
+		let message = document.getElementById("message")
+		submitForm.addEventListener("click", validate);
+
+		function validate() {
+			if ((creditCard.value.length > 0) && (email.value.length) > 0) {
+				message.innerHTML = "all valid";
+				alert("all valid");
+			}
+		}
+
+	</script>
 </body>
 
 </html>
