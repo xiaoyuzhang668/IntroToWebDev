@@ -22,4 +22,4 @@ function calcWordFrequencies() {
 	}
 }
 
-calcWordFrequencies();
+//calcWordFrequencies();

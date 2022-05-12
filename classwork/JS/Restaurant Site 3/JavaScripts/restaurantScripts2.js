@@ -102,21 +102,15 @@ function validate() {
 			event.preventDefault();
 		}
 	}
-	let inputs = document.getElementsByTagName("input");
-	let isValid = true;
-	for (let i = 0; i < inputs.length; i++) {
-		if (inputs[i].matches(":invalid")) {
-			isValid = false;
-			break;
-		}
+	var name = document.getElementById("name");
+	var re = new RegExp('[a-zA-Z0-9]+@[a-zA-Z0-9]+');
+	if ((isChecked) && (name.value != null) && (email.value != null) && (phone.value != null) && (info.value != null) && (email.value.indexOf("@") != -1) && (name.value != "") && (email.value != "") && (phone.value != "") && (info.value != "") && re.test(email.value)) {
+		message.innerHTML = "All fields in the form are valid. ";
+	} else {
+		message.innerHTML = "At least one field in the form is not valid.";
+		event.preventDefault();
+		event.stopPropagation();
 	}
-}
-
-if (isChecked && isValid) {
-	message.innerHTML = "All fields in the form are valid. ";
-} else {
-	message.innerHTML = "At least one field in the form is not valid.";
-	event.preventDefault();
 }
 
 function resetView() {

@@ -56,9 +56,18 @@
 		submitForm.addEventListener("click", validate);
 
 		function validate() {
-			if ((creditCard.value.length > 0) && (email.value.length) > 0) {
-				message.innerHTML = "all valid";
-				alert("all valid");
+			let inputs = document.getElementsByTagName("input");
+			let isValid = true;
+			for (let i = 0; i < inputs.length; i++) {
+				if (inputs[i].matches(":invalid")) {
+					isValid = false;
+					break;
+				}
+			}
+			if (isValid) {
+				alert("All Valid");
+			} else {
+				alert("Not Valid");
 			}
 		}
 

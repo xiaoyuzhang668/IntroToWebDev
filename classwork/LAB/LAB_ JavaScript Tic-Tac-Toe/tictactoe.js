@@ -1,5 +1,11 @@
+alert("te");
+
 let playerTurn = true;
 let computerMoveTimeout = 0;
+let turnInfo = document.getElementById("turnInfo");
+let x = document.getElementById("x");
+
+let y = document.getElementById("y");
 
 const gameStatus = {
 	MORE_MOVES_LEFT: 1,
@@ -18,7 +24,9 @@ function domLoaded() {
 	// Create click-event handlers for each game board button
 	const buttons = getGameBoardButtons();
 	for (let button of buttons) {
-		button.addEventListener("click", function () { boardButtonClicked(button); });
+		button.addEventListener("click", function () {
+			boardButtonClicked(button);
+		});
 	}
 
 	// Clear the board
@@ -33,7 +41,7 @@ function getGameBoardButtons() {
 }
 
 function checkForWinner() {
-	
+
 	const buttons = getGameBoardButtons();
 
 	// Ways to win
@@ -48,12 +56,11 @@ function checkForWinner() {
 		if (buttons[indices[0]].innerHTML !== "" &&
 			buttons[indices[0]].innerHTML === buttons[indices[1]].innerHTML &&
 			buttons[indices[1]].innerHTML === buttons[indices[2]].innerHTML) {
-			
+
 			// Found a winner
 			if (buttons[indices[0]].innerHTML === "X") {
 				return gameStatus.HUMAN_WINS;
-			}
-			else {
+			} else {
 				return gameStatus.COMPUTER_WINS;
 			}
 		}
@@ -80,9 +87,44 @@ function boardButtonClicked(button) {
 }
 
 function switchTurn() {
-	// TODO: Complete the function
+	checkForWinner();
+	if (gameStatus.MORE_MOVES_LEFT) {
+
+	}
+	if (gameStatus.gameStatus.HUMAN_WINS || gameStatus.gameStatus.COMPUTER_WINS || gameStatus.MORE_MOVES_LEFT) {
+		playerTurn = false;
+		if (gameStatus.gameStatus.HUMAN_WINS) {
+			turnInfo.innerHTML = "You win!";
+		} else if (gameStatus.gameStatus.COMPUTER_WINS) {
+			turnInfo.innerHTML = "Computer win!";
+		} else {
+			turnInfo.innerHTML = "Draw game";
+		}
+	}
+
 }
 
 function makeComputerMove() {
-	// TODO: Complete the function
+	let buttons = document.getElementsByTagName("button");
+	for (let i = 0; i < buttons.length; i++) {
+		if (!buttons[i].disabled) {
+			console.log("true");
+		} else {
+			console.log("false");
+		}
+	}
 }
+
+makeComputerMove();
+//	for (let button of buttons) {
+//		if (button.innerHTML !== "X" && button.innerHTML !== "O") {
+//			return gameStatus.MORE_MOVES_LEFT;
+//		}
+//	}
+//
+//	for (let i = 0; i < game.lights.length * 2; i++) {
+//		const randRow = Math.floor(Math.random() * game.rowCount);
+//		const randCol = Math.floor(Math.random() * game.columnCount);
+//	}
+//x.getAttribut////e('disabled');
+//y.getAttribute("disabled");
