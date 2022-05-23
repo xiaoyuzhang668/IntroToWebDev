@@ -12,6 +12,7 @@ function startAnimation(e) {
 	//	when mouse click, stop the previous movement timer
 	if (timerId) {
 		clearInterval(moveImage(clickX, clickY));
+		timerId = null;
 	}
 	//	if ((clickX) && (clickY)) {
 	timerId = setInterval(moveImage(clickX, clickY), 10);

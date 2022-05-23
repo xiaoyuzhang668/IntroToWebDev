@@ -69,7 +69,7 @@ function submitE() {
 	}
 	//CHANGE IMAGE BASED ON F DEGREE
 	let f = txtF.value;
-	if (txtF.value.length != 0) {
+	if (f.length != 0) {
 		switch (true) {
 			case f > 50:
 				img.setAttribute("src", "warm.png");
